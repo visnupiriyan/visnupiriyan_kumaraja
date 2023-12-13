@@ -2,54 +2,71 @@
 
 {% block content %}
 <style>
+  body {
+    background-color: white; 
+    color: black; 
+
+  .container {
+    width: 300px; 
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #1DA1F2; 
+    border-radius: 10px; 
+    text-align: center; 
+  }
+
   h1 {
     text-align: center;
-    color: #1DA1F2; 
+    color: #1DA1F2;
     font-size: 45px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
-}
-.container{
-  margin-left: 40px;
-}
-p{
-  font-family: 'Arial';
-}
-  .submit{
-    padding: 10px 12px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 7px;
   }
-  .cancel{
-    margin-top: 2px;
+
+  p {
+    font-family: 'Arial';
+  }
+
+  .submit,
+  .cancel {
     padding: 10px 12px;
-    background-color: #1DA1F2;
-    color: black;
     border: none;
     border-radius: 7px;
     text-decoration: none;
     font-size: 13.33px;
-      font-family: Arial;
+    font-family: Arial;
   }
+
+  .submit {
+    background-color: red;
+    color: white;
+  }
+
+  .cancel {
+    margin-top: 10px; 
+    background-color: #1DA1F2;
+    color: black;
+  }
+
   .footer {
     text-align: center;
     margin-top: 20px;
   }
-  .signature{
+
+  .signature {
     color: green;
     font-size: larger;
+    text-align: center;
   }
-  hr{
-    margin: 20px 40px;
-    
+
+  hr {
+    margin: 20px 0; 
   }
 </style>
-<h1 class="mt-4">Confirm Delete</h1>
+<h1><b>CONFIRM DELETE</b></h1>
 <div class="container">
-  <p>Are you sure you want to delete Contact "{{ task.name }}"?</p>
-  <form method="post" class="mt-4">
+  <p>Are you sure you want to delete Contact "<b>{{ task.name }}</b>"?</p>
+  <form method="post">
     {% csrf_token %}
     <button type="submit" class="submit">Delete</button>
     <a class="cancel" href="{% url 'task_list' %}">Cancel</a>

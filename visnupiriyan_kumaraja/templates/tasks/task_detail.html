@@ -10,56 +10,45 @@
         font-weight: 500;
     }
     .container{
-        margin-left: 40px;
+        margin: 0 auto;
+        text-align: center;
       }
-    .submit{
+    .submit, .edit, .cancel {
         margin-top: 2px;
         padding: 10px 12px;
+        border: none;
+        border-radius: 7px;
+        text-decoration: none;
+        font-size: 13.33px;
+        font-family: Arial;
+        display: inline-block;
+      }
+    .submit {
         background-color: red;
         color: white;
-        border: none;
-        border-radius: 7px;
-        text-decoration: none;
-        font-size: 13.33px;
-          font-family: Arial;
       }
-      .edit{
-        margin-top: 2px;
-        padding: 10px 12px;
+    .edit {
         background-color: #FFDB58;
         color: black;
-        border: none;
-        border-radius: 7px;
-        text-decoration: none;
-        font-size: 13.33px;
-          font-family: Arial;
       }
-      .cancel{
-        margin-top: 2px;
-        padding: 10px 12px;
+    .cancel {
         background-color: #1DA1F2;
         color: black;
-        border: none;
-        border-radius: 7px;
-        text-decoration: none;
-        font-size: 13.33px;
-          font-family: Arial;
       }
-      .footer {
+    .footer {
         text-align: center;
         margin-top: 20px;
       }
-      .signature{
+    .signature{
         color: green;
         font-size: larger;
       }
-      hr{
+    hr{
         margin: 20px 40px;
-        
       }
 </style>
 
-<h1 class="mt-4">Contact Details</h1>
+<h1 class="mt-4"><b>CONTACT DETAILS</b></h1>
 <div class="container">
 
     <p class="mt-4"><strong>Name:</strong> {{ task.name }}</p>

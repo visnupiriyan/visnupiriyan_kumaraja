@@ -42,6 +42,7 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      float: right;
   }
   tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -69,7 +70,7 @@ tr:nth-child(odd) {
   }
 </style>
 <div style="text-align: center;">
-  <h1 class="mt-4">Contact Management</h1>
+  <h1 class="mt-4"><b>CONTACT MANAGEMENT</b></h1>
 </div>
 <div class="container">
   <a href="{% url 'task_create' %}" class="new-contact-btn">Add a New Contact</a>
@@ -87,22 +88,20 @@ tr:nth-child(odd) {
       {% for task in task_list %}
       <tr>
         <td>
+          {{ task.name }}
+        </td>
+        <td> 
+          {{task.email}}
+        </td>
+        <td>
+          {{task.created_time}}
           <a class="btn btn-info btn-sm margin" href="{% url 'task_detail' task.pk %}" >
             <span class="action-icons edit-icon" title="Edit">&#9998;</span>
           </a>
           <a class="icon-link margin" href="{% url 'task_confirm_list' task.pk %}">
                 <span class="action-icons bin-icon" title="Delete">&#128465;</span>
           </a>
-          {{ task.name }}
         </td>
-        <td> 
-          {{task.email}}
-        </td>
-        
-        <td>
-          {{task.created_time}}
-        </td>
-        
       </tr>
       {% endfor %}
     </tbody> 
